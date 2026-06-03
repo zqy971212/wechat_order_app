@@ -3,7 +3,7 @@
   "compileType": "miniprogram",
   "libVersion": "latest",
   "miniprogramRoot": "./",
-  "projectname": "couple-menu-miniapp",
+  "projectname": "wechat_order_app",
   "setting": {
     "urlCheck": false,
     "es6": true,
