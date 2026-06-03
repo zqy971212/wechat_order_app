@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/order/order"
+  ],
+  "window": {
+    "navigationBarTitleText": "情侣点单",
+    "navigationBarBackgroundColor": "#fff7f0",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff7f0"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

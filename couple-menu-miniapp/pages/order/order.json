@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "情侣点单",
+  "usingComponents": {
+    "menu-category": "/components/menu-category/menu-category",
+    "menu-item-card": "/components/menu-item-card/menu-item-card",
+    "selected-bar": "/components/selected-bar/selected-bar"
+  }
+}

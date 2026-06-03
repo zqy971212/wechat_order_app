@@ -1,0 +1,23 @@
+<view class="selected-bar">
+  <view class="bag-wrap">
+    <view class="bag-icon">
+      <view class="bag-handle"></view>
+      <text class="bag-heart">♥</text>
+    </view>
+    <view wx:if="{{selectedCount}}" class="count-badge">{{selectedCount}}</view>
+  </view>
+  <view class="selected-count">
+    <text class="count-label">已选</text>
+    <text class="count-number">{{selectedCount}}</text>
+    <text class="count-label">项</text>
+  </view>
+  <view class="bar-actions">
+    <button class="view-btn" bindtap="handleViewSelected">查看已选</button>
+    <button
+      class="confirm-btn {{selectedCount ? 'enabled' : 'disabled'}}"
+      bindtap="handleConfirm"
+    >
+      确认选择
+    </button>
+  </view>
+</view>

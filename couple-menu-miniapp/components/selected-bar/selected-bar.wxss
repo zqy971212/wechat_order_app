@@ -1,0 +1,135 @@
+.selected-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  height: calc(112rpx + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16rpx 36rpx calc(16rpx + env(safe-area-inset-bottom)) 44rpx;
+  background: linear-gradient(90deg, rgba(255, 238, 166, 0.96) 0%, rgba(255, 246, 210, 0.96) 100%);
+  box-shadow: 0 -10rpx 30rpx rgba(158, 116, 34, 0.16);
+}
+
+.bag-wrap {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+  flex-shrink: 0;
+}
+
+.bag-icon {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 74rpx;
+  height: 62rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14rpx;
+  background: linear-gradient(135deg, #ffd95b 0%, #ffb629 100%);
+  color: #ffffff;
+  box-shadow: 0 8rpx 16rpx rgba(255, 178, 34, 0.28);
+}
+
+.bag-handle {
+  position: absolute;
+  left: 18rpx;
+  top: -26rpx;
+  width: 38rpx;
+  height: 36rpx;
+  border: 5rpx solid #2a2f36;
+  border-bottom: 0;
+  border-radius: 24rpx 24rpx 0 0;
+}
+
+.bag-heart {
+  font-size: 26rpx;
+  line-height: 32rpx;
+}
+
+.count-badge {
+  position: absolute;
+  right: -8rpx;
+  top: -6rpx;
+  min-width: 34rpx;
+  height: 34rpx;
+  padding: 0 8rpx;
+  border-radius: 20rpx;
+  background: #ff5b3e;
+  color: #ffffff;
+  font-size: 22rpx;
+  line-height: 34rpx;
+  text-align: center;
+  font-weight: 700;
+}
+
+.selected-count {
+  min-width: 150rpx;
+  margin-left: 18rpx;
+  color: #2a2f36;
+}
+
+.count-number {
+  margin: 0 8rpx;
+  color: #2a2f36;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  font-weight: 700;
+}
+
+.count-label {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #2a2f36;
+}
+
+.bar-actions {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 14rpx;
+}
+
+.view-btn,
+.confirm-btn {
+  height: 64rpx;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  border-radius: 32rpx;
+  font-size: 26rpx;
+  line-height: 64rpx;
+}
+
+.view-btn::after,
+.confirm-btn::after {
+  border: none;
+}
+
+.view-btn {
+  width: 154rpx;
+  background: rgba(255, 255, 255, 0.92);
+  color: #4a4d52;
+  box-shadow: 0 6rpx 14rpx rgba(111, 83, 24, 0.08);
+}
+
+.confirm-btn {
+  width: 174rpx;
+  font-weight: 700;
+}
+
+.confirm-btn.enabled {
+  background: linear-gradient(135deg, #ffcf50 0%, #ffae22 100%);
+  color: #ffffff;
+  box-shadow: 0 8rpx 16rpx rgba(255, 171, 31, 0.28);
+}
+
+.confirm-btn.disabled {
+  background: #e7d9b5;
+  color: #a09372;
+}

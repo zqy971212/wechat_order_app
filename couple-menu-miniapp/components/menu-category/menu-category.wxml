@@ -1,0 +1,16 @@
+<scroll-view class="category-list" scroll-y show-scrollbar="{{false}}">
+  <block wx:if="{{categories.length}}">
+    <view
+      wx:for="{{categories}}"
+      wx:key="id"
+      class="category-item {{activeId === item.id ? 'active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="handleTap"
+    >
+      <image wx:if="{{item.icon}}" class="category-icon" src="{{item.icon}}" mode="aspectFit" />
+      <text wx:else class="category-icon-text">•</text>
+      <text class="category-name">{{item.name}}</text>
+    </view>
+  </block>
+  <view wx:else class="category-empty">暂无分类</view>
+</scroll-view>

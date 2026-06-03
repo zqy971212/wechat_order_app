@@ -1,0 +1,95 @@
+<view class="order-page">
+  <view class="top-area" style="{{topAreaStyle}}">
+    <view class="hero-copy">
+      <view class="title">{{pageTitle}}</view>
+      <view class="subtitle">{{pageDesc}} <text class="heart">♥</text></view>
+    </view>
+    <view class="search-box">
+      <input
+        class="search-input"
+        value="{{keyword}}"
+        placeholder="搜索想吃的菜或饮品"
+        placeholder-class="search-placeholder"
+        confirm-type="search"
+        bindinput="handleSearchInput"
+      />
+      <button wx:if="{{keyword}}" class="clear-search" bindtap="clearSearch">×</button>
+      <text class="search-mark">⌕</text>
+    </view>
+  </view>
+
+  <view wx:if="{{errorMessage}}" class="error-state">
+    <view class="error-title">{{errorMessage}}</view>
+    <view class="error-desc">请检查 data/menu.js 中的 categories 和 menuItems。</view>
+  </view>
+
+  <view wx:else class="menu-area">
+    <view class="category-area">
+      <menu-category
+        categories="{{categories}}"
+        active-id="{{activeCategoryId}}"
+        bind:change="handleCategoryChange"
+      />
+    </view>
+
+    <scroll-view class="item-scroll" scroll-y enhanced show-scrollbar="{{false}}">
+      <view class="item-list">
+        <block wx:if="{{displayItems.length}}">
+          <menu-item-card
+            wx:for="{{displayItems}}"
+            wx:key="id"
+            item="{{item}}"
+            selected="{{item.isSelected}}"
+            bind:toggle="handleToggleItem"
+          />
+        </block>
+
+        <view wx:else class="empty-state">
+          <view class="empty-title">这里还没有内容</view>
+          <view class="empty-desc" wx:if="{{keyword}}">换个关键词再试试。</view>
+          <view class="empty-desc" wx:else>以后可以在后台或 data/menu.js 中追加。</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <selected-bar
+    selected-count="{{selectedCount}}"
+    bind:viewselected="showSelectedPanel"
+    bind:confirm="confirmSelection"
+  />
+
+  <view wx:if="{{selectedPanelVisible}}" class="sheet-mask" bindtap="hideSelectedPanel">
+    <view class="selected-sheet" catchtap="noop">
+      <view class="sheet-header">
+        <view class="sheet-title">已选择 {{selectedCount}} 项</view>
+        <button class="sheet-close" bindtap="hideSelectedPanel">×</button>
+      </view>
+
+      <scroll-view class="selected-list" scroll-y>
+        <block wx:if="{{selectedItems.length}}">
+          <view class="selected-row" wx:for="{{selectedItems}}" wx:key="id">
+            <image class="selected-cover" src="{{item.image}}" mode="aspectFill" />
+            <view class="selected-info">
+              <view class="selected-title">{{item.title}}</view>
+              <view class="selected-price">¥{{item.price || 0}}</view>
+            </view>
+            <button
+              class="remove-btn"
+              size="mini"
+              plain="true"
+              hover-class="remove-btn-hover"
+              data-id="{{item.id}}"
+              bindtap="removeSelected"
+            >-</button>
+          </view>
+        </block>
+        <view wx:else class="selected-empty">还没有选择内容</view>
+      </scroll-view>
+
+      <button wx:if="{{selectedItems.length}}" class="clear-all-btn" bindtap="clearAllSelected">
+        清空所有
+      </button>
+    </view>
+  </view>
+</view>

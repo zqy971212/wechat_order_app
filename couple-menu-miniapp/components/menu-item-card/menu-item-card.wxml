@@ -1,0 +1,32 @@
+<view class="item-card {{selected ? 'selected' : ''}}">
+  <view class="cover-wrap">
+    <view wx:if="{{item.badge}}" class="cover-badge">{{item.badge}}</view>
+    <image
+      wx:if="{{item.image && !imageError}}"
+      class="cover"
+      src="{{item.image}}"
+      mode="aspectFill"
+      binderror="handleImageError"
+    />
+    <view wx:else class="cover-fallback">菜单</view>
+  </view>
+
+  <view class="item-body">
+    <view class="title-row">
+      <view class="item-title">{{item.title || '未命名菜品'}}</view>
+      <view class="item-price">¥{{item.price || 0}}</view>
+    </view>
+
+    <view class="item-subtitle">{{item.subtitle || '可以后续补充一句简介'}}</view>
+    <view class="item-desc">{{item.description || '暂无详细描述'}}</view>
+
+    <view class="meta-row">
+      <view class="tag-row" wx:if="{{item.tags && item.tags.length}}">
+        <text class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
+      </view>
+      <view class="select-btn {{selected ? 'active' : ''}}" bindtap="handleToggle">
+        {{selected ? '✓' : '+'}}
+      </view>
+    </view>
+  </view>
+</view>

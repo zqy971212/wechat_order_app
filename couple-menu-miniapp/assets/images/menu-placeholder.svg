@@ -1,0 +1,8 @@
+<svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="240" rx="18" fill="#FFE6D8"/>
+  <circle cx="162" cy="126" r="58" fill="#FFF8F2"/>
+  <circle cx="162" cy="126" r="38" fill="#F6C1A8"/>
+  <path d="M112 76C96 94 88 112 88 132C88 170 120 198 162 198C204 198 236 170 236 132C236 112 228 94 212 76" stroke="#B56949" stroke-width="10" stroke-linecap="round"/>
+  <path d="M122 70L132 42M162 64L162 34M202 70L192 42" stroke="#B56949" stroke-width="8" stroke-linecap="round"/>
+  <text x="160" y="132" text-anchor="middle" dominant-baseline="middle" font-size="30" font-family="Arial, sans-serif" font-weight="700" fill="#9A5A42">菜单</text>
+</svg>
